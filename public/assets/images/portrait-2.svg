@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <circle cx="400" cy="330" r="160" fill="#1a1a1a"/>
+  <path d="M90 1000 C90 700 230 560 400 560 C570 560 710 700 710 1000 Z" fill="#1a1a1a"/>
+  <text x="400" y="830" fill="#f5b800" font-family="Arial, sans-serif" font-size="40" font-weight="700" text-anchor="middle">YOUR PHOTO 2 (tap to swap)</text>
+</svg>

@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+@layer utilities {
+  /* ---------- Fonts ---------- */
+  .font-michroma { font-family: Michroma, sans-serif; }
+  .font-space { font-family: 'Space Grotesk', monospace, sans-serif; }
+  .font-serif-display { font-family: Cinzel, 'Playfair Display', serif; }
+  .font-techno-capsule {
+    letter-spacing: -0.02em;
+    font-family: Michroma, sans-serif;
+    display: inline-block;
+  }
+  .font-wide-trotoart {
+    letter-spacing: -0.01em;
+    font-family: Michroma, sans-serif;
+    transform: scaleY(0.92);
+  }
+
+  /* ---------- Surfaces ---------- */
+  .bg-dark-textured {
+    background-color: #0b0b0b;
+    background-image: radial-gradient(circle at 50% 25%, #181818 0%, #080808 90%);
+  }
+  .badge-card-shadow {
+    box-shadow:
+      0 30px 60px -15px #000000f2,
+      0 0 0 1px #ffffff1f,
+      0 12px 24px -6px #000000b3;
+  }
+  .tape-strip-realistic {
+    clip-path: polygon(0% 4%, 3% 0%, 97% 2%, 100% 6%, 98% 95%, 95% 100%, 3% 98%, 0% 93%);
+    background: linear-gradient(135deg, #e6b124 0%, #f7c938 35%, #e1aa1b 65%, #f2bf2b 100%);
+    box-shadow:
+      2px 3px 7px #00000080,
+      inset 0 1px 1px #ffffff73;
+  }
+
+  /* ---------- 3D flip ---------- */
+  .perspective-1000 { perspective: 1000px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+  .rotate-y-180 { transform: rotateY(180deg); }
+
+  /* ---------- Animations ---------- */
+  .animate-scanline { animation: 0.75s ease-in-out scanline; }
+  .animate-swing { transform-origin: top; animation: 0.8s ease-in-out pendulum; }
+  .animate-tape-bounce { animation: 0.4s ease-out tapeBounce; }
+  .animate-continuous-swing-gwen { transform-origin: top; animation: 2.8s ease-in-out infinite webSwingGwen; }
+  .animate-continuous-swing-spidey { transform-origin: top; animation: 2.4s ease-in-out infinite webSwingSpidey; }
+  .animate-continuous-swing-miles { transform-origin: top; animation: 2.6s ease-in-out infinite webSwingMiles; }
+  .animate-spidey-front-float { transform-origin: top; animation: 3.5s ease-in-out infinite spideyFrontFloat; }
+  .animate-iron-man-squeeze { transform-origin: 100% 100%; animation: 2.6s ease-in-out infinite ironManSqueeze; }
+  .animate-badge-torsional { transform-origin: top; animation: 5s ease-in-out infinite badgeTorsional; }
+  .animate-card-shake { animation: 0.5s ease-in-out shakeCard; }
+  .animate-fade-in { animation: 0.2s ease-out fadeIn; }
+  .animate-pop-in { animation: 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28) popIn; }
+}
+
+@keyframes scanline {
+  0% { opacity: 0.8; top: 0%; }
+  50% { opacity: 1; }
+  to { opacity: 0; top: 100%; }
+}
+@keyframes pendulum {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+  to { transform: rotate(0); }
+}
+@keyframes tapeBounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.15) rotate(4deg); }
+  60% { transform: scale(0.95) rotate(-3deg); }
+  to { transform: scale(1) rotate(0); }
+}
+@keyframes webSwingGwen {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(4.5deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+  to { transform: rotate(0); }
+}
+@keyframes webSwingSpidey {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5.5deg); }
+  75% { transform: rotate(-2.5deg); }
+  to { transform: rotate(0); }
+}
+@keyframes webSwingMiles {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-4.5deg); }
+  75% { transform: rotate(3deg); }
+  to { transform: rotate(0); }
+}
+@keyframes spideyFrontFloat {
+  0% { transform: translateY(0) rotate(0); }
+  30% { transform: translateY(-7px) rotate(-0.3deg); }
+  70% { transform: translateY(5px) rotate(0.6deg); }
+  to { transform: translateY(0) rotate(0); }
+}
+@keyframes ironManSqueeze {
+  0% { transform: scale(1) translateY(0); }
+  35% { transform: scale(1.07) translateY(-2px) scaleX(0.97); }
+  70% { transform: scale(0.98) translateY(1px) scaleX(1.02); }
+  to { transform: scale(1) translateY(0); }
+}
+@keyframes badgeTorsional {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-1.8deg); }
+  75% { transform: rotate(1.8deg); }
+  to { transform: rotate(0); }
+}
+@keyframes shakeCard {
+  0%, to { transform: translate(0) rotate(0); }
+  20% { transform: translate(-8px) rotate(-2.5deg); }
+  40% { transform: translate(8px) rotate(2.5deg); }
+  60% { transform: translate(-5px) rotate(-1.5deg); }
+  80% { transform: translate(5px) rotate(1.5deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
